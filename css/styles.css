@@ -55,11 +55,50 @@ section h2 {
 
 section#status {
   display: flex;
+  flex-direction: row;
+}
+section#status .divide:first-of-type {
+  flex: 10;
+}
+section#status .divide:last-of-type {
+  flex: 1;
+  background-color: #00264d;
+  background-image: none;
+  display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to top, #00264B, #02559A);
+}
+section#status .divide:last-of-type a {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25%;
+  padding-bottom: 25%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ebebeb;
+  font-size: .6rem;
+  font-weight: 200;
+  margin: 1px;
+  background-color: #059bff;
+  background-size: cover;
+  background-position: center;
+  background-image: url(data:image/png;base64,R0lGODlhMgAyAIABAEvs/v///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMwMTQgNzkuMTU2Nzk3LCAyMDE0LzA4LzIwLTA5OjUzOjAyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NDk1OTE2MEU5MTcxMUU0OUYxQkM4MTc4QzdGM0EwMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1NDk1OTE2MUU5MTcxMUU0OUYxQkM4MTc4QzdGM0EwMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU0OTU5MTVFRTkxNzExRTQ5RjFCQzgxNzhDN0YzQTAwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU0OTU5MTVGRTkxNzExRTQ5RjFCQzgxNzhDN0YzQTAwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAADIAMgAAAlWMj6nL7Q+jnLTai7PevPsPGsBIamQ5AeGhpqtItasc0aD94J7+9v4PDAqHxKLxiEwql8ym8wmNSqfUH49zXWRNsd428cWEWd7Yacw4o6vstvsNPxYAADs=);
+}
+section#status .divide:last-of-type .updown {
+  margin-top: auto;
+}
+section#status .divide:last-of-type > div {
+  background-image: none;
+  flex: none;
+}
+section#status .divide {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to top, #00264d, #02579c);
   padding: 0;
 }
-section#status > h1 {
+section#status .divide > h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -73,33 +112,33 @@ section#status > h1 {
   position: relative;
   position: flex;
 }
-section#status > h1 span {
+section#status .divide > h1 span {
   color: #ebebeb;
   position: absolute;
   top: -3vh;
   left: 0;
   width: 100%;
 }
-section#status > div {
+section#status .divide > div {
   flex: 1;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVQIW2OMq7zlw4ADMIIkF7WrbcEmP+gkAarWGgXyq5CNAAAAAElFTkSuQmCC);
   display: flex;
 }
-section#status .btn-bars {
+section#status .divide .btn-bars {
   flex: 1;
   padding: 0 4vw;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
-section#status .btn-bars li {
+section#status .divide .btn-bars li {
   display: flex;
   flex-direction: column;
   flex: 1;
   height: 50%;
   background-color: rgba(0, 18, 41, 0.5);
 }
-section#status .btn-bars li > span {
+section#status .divide .btn-bars li > span {
   display: block;
   width: 100%;
   height: 4vh;
@@ -109,24 +148,24 @@ section#status .btn-bars li > span {
   justify-content: center;
   font-weight: 200;
 }
-section#status .btn-bars li > span i {
+section#status .divide .btn-bars li > span i {
   position: relative;
   top: -5vh;
   font-style: normal;
   color: #059bff;
 }
-section#status .btn-bars li:hover {
+section#status .divide .btn-bars li:hover {
   background-color: #001229;
   transition: background-color 100ms ease-in-out;
 }
-section#status .btn-bars li:hover > span {
+section#status .divide .btn-bars li:hover > span {
   background-color: #FD3600;
   transition: background-color 100ms ease-in-out;
 }
-section#status .btn-bars li:hover > span i {
+section#status .divide .btn-bars li:hover > span i {
   color: #FD3600;
 }
-section#status .btn-bars li div {
+section#status .divide .btn-bars li div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,7 +173,7 @@ section#status .btn-bars li div {
   padding-bottom: 5vh;
   position: relative;
 }
-section#status .btn-bars li div::before, section#status .btn-bars li div::after {
+section#status .divide .btn-bars li div::before, section#status .divide .btn-bars li div::after {
   content: "";
   display: block;
   height: 100%;
@@ -143,13 +182,13 @@ section#status .btn-bars li div::before, section#status .btn-bars li div::after 
   position: absolute;
   bottom: 0;
 }
-section#status .btn-bars li div::before {
+section#status .divide .btn-bars li div::before {
   left: 0;
 }
-section#status .btn-bars li div::after {
+section#status .divide .btn-bars li div::after {
   right: 0;
 }
-section#status .btn-bars li div span {
+section#status .divide .btn-bars li div span {
   line-height: 1;
   color: #059bff;
   font-weight: 200;
