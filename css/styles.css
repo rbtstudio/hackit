@@ -238,6 +238,7 @@ section#status .divide .btn-bars li::before {
 section#status-control-pane {
   display: flex;
   flex-direction: column;
+  margin-left: 2px;
 }
 section#status-control-pane > h1 {
   flex: none;
@@ -248,7 +249,7 @@ section#status-control-pane > div {
   justify-content: center;
 }
 section#status-control-pane .rule {
-  flex: 1;
+  flex: .5;
 }
 section#status-control-pane .display {
   flex: 5;
@@ -517,6 +518,96 @@ section#status-control-pane .ctrl > div span:hover::before {
   border-style: solid;
   border-color: transparent #2cff14 transparent transparent;
 }
-section#status-control-pane .micr {
+
+/* ---------------new css------------------*/
+section#status-control-pane .modal {
+  flex: 3;
+  display: flex;
+}
+section#status-control-pane .modal ul {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+section#status-control-pane .modal ul li.reset {
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #1a5eff 0%, #0045e6 100%);
+  border: 1px solid #002e99;
+  transition: background-image 100ms ease-in-out;
+}
+section#status-control-pane .modal ul li.reset a {
+  color: #9ed8ff;
+}
+section#status-control-pane .modal ul li.reset:hover {
+  background-image: linear-gradient(to bottom, #3370ff 0%, #004cff 100%);
+}
+section#status-control-pane .modal ul li.reset:hover a {
+  color: #ebebeb;
+}
+section#status-control-pane .modal ul li.reset:hover::before {
+  background: radial-gradient(ellipse at center, #ebebeb 0%, #52baff 100%);
+  box-shadow: 0 0 15px 7px #52baff;
+}
+section#status-control-pane .modal ul li.reset::before {
+  content: "";
+  display: block;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 50%;
+  margin: 1vh;
+  background-color: #002680;
+  background: radial-gradient(ellipse at center, #ebebeb 0%, #059bff 100%);
+  box-shadow: 0 0 10px 4px #059bff;
+}
+section#status-control-pane .modal ul li {
+  flex: 1;
+  margin: 1vh;
+  background-color: #002680;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #0036b3 0%, #002680 100%);
+  border: 1px solid #00174d;
+}
+section#status-control-pane .modal ul li:nth-child(2) {
+  background-image: linear-gradient(to bottom, #002f9e 0%, #00206b 100%);
+}
+section#status-control-pane .modal ul li:nth-child(3) {
+  background-image: linear-gradient(to bottom, #002c94 0%, #001d61 100%);
+}
+section#status-control-pane .modal ul li:nth-child(4) {
+  background-image: linear-gradient(to bottom, #00298a 0%, #001a57 100%);
+}
+section#status-control-pane .modal ul li:nth-child(5) {
+  background-image: linear-gradient(to bottom, #002680 0%, #00174d 100%);
+}
+section#status-control-pane .modal ul li:nth-child(6) {
+  background-image: linear-gradient(to bottom, #002375 0%, #001442 100%);
+}
+section#status-control-pane .modal ul li:nth-child(7) {
+  background-image: linear-gradient(to bottom, #00206b 0%, #001138 100%);
+}
+section#status-control-pane .modal ul li:nth-child(8) {
+  background-image: linear-gradient(to bottom, #001d61 0%, #000e2e 100%);
+}
+section#status-control-pane .modal ul li:nth-child(9) {
+  background-image: linear-gradient(to bottom, #001a57 0%, #000b24 100%);
+}
+section#status-control-pane .modal ul li:hover {
+  background-image: linear-gradient(to bottom, #0045e6 0%, #0036b3 100%);
+}
+section#status-control-pane .modal ul li:hover a {
+  color: #ebebeb;
+}
+section#status-control-pane .modal ul li a {
+  color: #059bff;
+  font-size: .6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
 }

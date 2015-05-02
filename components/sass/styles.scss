@@ -238,6 +238,7 @@ section#status {
 }
 section#status-control-pane {
 	@include flexdir(col);
+	margin-left: 2px;
 	> h1 {
 		flex: none;
 	}
@@ -247,7 +248,7 @@ section#status-control-pane {
 		justify-content: center;
 	}
 	.rule {
-		flex: 1;
+		flex: .5;
 	}
 
 	.display {
@@ -500,8 +501,86 @@ section#status-control-pane {
 			}
 		}
 	}
-	.micr {
-		flex: 2;
+	
+}
+
+
+/* ---------------new css------------------*/
+
+section#status-control-pane {
+	.modal {
+		$modalbtn: hsl(222, 100%, 25%);
+		$modallite: lighten($modalbtn, 10);
+		@mixin buttonshade($nth){
+			background-image: linear-gradient(to bottom, darken($modallite, $nth*2) 0%, darken($modalbtn, $nth*2) 100%);
+		}
+		flex: 3;
+		display: flex;
+		ul {
+			flex: 1;
+			@include flexdir(col);
+			li.reset {
+				flex: 2;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				background-image: linear-gradient(to bottom, lighten($modallite, 20) 0%, lighten($modalbtn, 20) 100%);
+				border: 1px solid lighten($modalbtn, 5);
+				transition: background-image 100ms ease-in-out;
+				a {color: lighten($lit, 30);}
+				&:hover {
+					background-image: linear-gradient(to bottom, lighten($modallite, 25) 0%, lighten($modalbtn, 25) 100%);
+					a {color: $white;}
+					&::before {
+						background: radial-gradient(ellipse at center, $white 0%, lighten($lit, 15) 100%);
+						box-shadow: 0 0 15px 7px lighten($lit, 15);
+					}	
+				}	
+				&::before {
+					content: "";
+					display: block;
+					width: 1.5vw;
+					height: 1.5vw;
+					border-radius: 50%;
+					margin: 1vh;
+					background-color: hsl(222, 100%, 25%);
+					background: radial-gradient(ellipse at center, $white 0%, $lit 100%);
+					box-shadow: 0 0 10px 4px $lit;
+				}
+			}
+			li {
+				flex: 1;
+				margin: 1vh;
+				background-color: $modalbtn;
+				border-radius: 2px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-image: linear-gradient(to bottom, $modallite 0%, $modalbtn 100%);
+				border: 1px solid darken($modalbtn, 10);
+				&:nth-child(2){@include buttonshade(2);}
+				&:nth-child(3){@include buttonshade(3);}
+				&:nth-child(4){@include buttonshade(4);}
+				&:nth-child(5){@include buttonshade(5);}
+				&:nth-child(6){@include buttonshade(6);}
+				&:nth-child(7){@include buttonshade(7);}
+				&:nth-child(8){@include buttonshade(8);}
+				&:nth-child(9){@include buttonshade(9);}
+				&:hover {
+					background-image: linear-gradient(to bottom, lighten($modallite, 10) 0%, lighten($modalbtn, 10) 100%);
+					a {color: $white;}	
+				}
+				a {
+					color: $lit;
+					font-size: .6rem;
+					text-transform: uppercase;
+					text-decoration: none;
+					display: flex;
+					
+				}
+			}
+		}
 	}
 }
 
