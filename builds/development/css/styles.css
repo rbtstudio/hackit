@@ -56,6 +56,7 @@ section h2 {
 section#status {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 section#status .divide:first-of-type {
   flex: 10;
@@ -223,6 +224,15 @@ section#status .divide .btn-bars li div span {
   font-weight: 200;
   font-size: .8rem;
   text-transform: uppercase;
+}
+section#status .divide .btn-bars li::before {
+  content: "";
+  display: block;
+  border-width: .75vw 1vw .75vw 0;
+  border-style: solid;
+  border-color: transparent #ebebeb transparent transparent;
+  position: absolute;
+  left: .5vw;
 }
 
 section#status-control-pane {

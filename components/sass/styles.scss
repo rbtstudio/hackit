@@ -67,6 +67,7 @@ section {
 }
 section#status {
 	@include flexdir(row);
+	position: relative;
 	.divide:first-of-type{
 		flex: 10;
 	}
@@ -220,6 +221,16 @@ section#status {
 						font-size: .8rem;
 						text-transform: uppercase;
 					}
+				}
+
+				&::before {
+					content: "";
+					display: block;
+					border-width: .75vw 1vw .75vw 0;
+					border-style: solid;
+					border-color: transparent $white transparent transparent;
+					position: absolute;
+					left: .5vw;
 				}
 			}
 		}
