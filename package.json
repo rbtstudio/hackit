@@ -1,0 +1,14 @@
+{
+  "name": "hackit",
+  "version": "0.0.1",
+  "description": "hackit project",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Matthew Higley",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
