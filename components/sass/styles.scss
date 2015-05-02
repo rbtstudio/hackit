@@ -1,0 +1,362 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+@mixin flexdir($dir){
+	display: flex;
+	@if($dir == 'col'){flex-direction: column;}
+	@elseif($dir == 'row'){flex-direction: row;}
+}
+
+$white: hsl(0, 0%, 92%);
+$baby: hsl(204, 100%, 51%);
+$green: hsl(114, 100%, 54%);
+$yellow: hsl(60, 100%, 50%);
+$lit: $baby;
+$dim: darken($lit, 30);
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+#{headings()}{
+	font-size: 2rem;
+	color: red;
+}
+
+button {
+	background: transparent;
+	border: none;
+	color: $white;
+}
+
+html {
+	height: 100vh;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 20px;
+	background-image: linear-gradient(hsl(213, 94%, 20%), hsl(252, 100%, 1%));
+	font-family: "Neue Haas Unica Pro";
+	font-size: 100%;
+	@include flexdir(row);
+}
+
+h1, h2 {
+	margin: 0;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: $baby;
+	font-size: .5rem;
+}
+section {
+	flex: 1;
+	height: 100%;
+	padding: 2px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #0499FF;
+	h1 {
+		text-align: center;
+	}
+	h2 {
+		text-align: center;
+	}
+}
+section#status-control-pane {
+	@include flexdir(col);
+	> h1 {
+		flex: none;
+	}
+	> div {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+	}
+	.rule {
+		flex: 1;
+	}
+
+	.display {
+		flex: 5;
+		@include flexdir(col);
+		.grp {
+			margin-bottom: 5px;
+		}
+		.energyrate {
+			@include flexdir(row);
+			.frame {
+				flex: 8;
+				@include flexdir(col);
+				border: 1px solid $lit;
+				background-image: linear-gradient(hsl(213, 94%, 20%), hsl(252, 100%, 1%));
+				span {
+					flex: none;
+					@include flexdir(row);
+					justify-content: space-around;
+					h3 {
+						font-size: .6rem;
+						color: $lit;
+						font-weight: 200;
+						margin: 1vh 0;
+					}
+				}
+				div {
+					flex: 1;
+					margin: 0 10px;
+					border-width: 0 5px 2px;
+					border-color: $lit;
+					border-style: solid;
+					background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVQIW2OMq7zlw4ADMIIkF7WrbcEmP+gkAarWGgXyq5CNAAAAAElFTkSuQmCC);
+					&::before {
+						content: "";
+						display: block;
+						width: 100%;
+						height: 5px;
+						background: #FBFE5D;
+						background: #C61033;
+						background: linear-gradient(to right,  hsl(61, 99%, 68%) 0%,hsl(348, 85%, 42%) 100%);
+					}
+				}
+				> h2 {
+					flex: none;
+					line-height: 2;
+				}
+			}
+			.side-btns {
+				flex: 1;
+				@include flexdir(col);
+
+				span {
+					flex: 1 1 5vh;
+					width: 100%;
+					@include flexdir(row);
+					justify-content: center;
+					align-items: center;
+					font-size: .6rem;
+					margin: 1px;
+					color: $white;
+
+					&:nth-child(1){
+						background-color: $lit;
+						margin-top: 0;
+						&:hover {background-color: complement($lit);}
+					}
+					&:nth-child(2){
+						background-color: darken($lit, 15);
+						&:hover {background-color: complement(darken($lit, 15));}
+					}
+					&:nth-child(3){
+						background-color: darken($lit, 30);
+						margin-bottom: 0;
+						&:hover {background-color: complement(darken($lit, 30));}
+					}
+
+				}
+			}
+		}
+
+		.fluctuation {
+			@include flexdir(col);
+			background-color: #01274E;
+			.tab {
+				flex: none;
+				@include flexdir(row);
+				div {
+					flex: none;
+					width: 50%;
+					background-color: #014681;
+					@include flexdir(row);
+					justify-content: center;
+					align-items: center;
+					font-size: .8rem;
+					h2 {
+						color: #03ECFD;
+						padding: 1vh 0;
+						letter-spacing: .1em;
+					}
+				}
+			}
+			.graph {
+				border: 1px solid $lit;
+				flex: 1 1 10vh;
+				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVQIW2OMq7zlw4ADMIIkF7WrbcEmP+gkAarWGgXyq5CNAAAAAElFTkSuQmCC);
+			}
+			> h2 {
+				flex: none;
+			}
+			button.close {
+				flex: none;
+				margin-left: auto;
+				color: $yellow;
+				i {
+					border: 3px solid #027189;
+					padding: 1px;
+				}
+			}
+			.btn-group {
+				@include flexdir(row);
+				a {
+					flex: 1;
+					text-decoration: none;
+					border: 1px solid $lit;
+					margin-right: 5px;
+					color: $white;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 1vh 2vw;
+					font-size: .6rem;
+					text-transform: uppercase;
+					font-weight: 200;
+					transition: background-color 50ms ease-in-out;
+					&:hover {
+						background-color: #540C00;
+						i {
+							color: $yellow;
+						}
+					}
+					i {
+						color: $dim;
+						transform: background-color 50ms ease-in-out;
+					}
+					&:last-child{
+						margin: 0;
+					}
+				}
+			}
+		}
+
+		.linear {
+			.btn-group {
+				@include flexdir(row);
+				a {
+					flex: 1;
+					text-decoration: none;
+					border: 1px solid $lit;
+					margin-right: 5px;
+					color: $white;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 5px 10px;
+					font-size: .6rem;
+					text-transform: uppercase;
+					font-weight: 200;
+					transform: background-color 50ms ease-in-out;
+					&:hover {
+						background-color: #540C00;
+						i {
+							color: $yellow;
+						}
+					}
+					i {
+						color: $dim;
+						transform: background-color 50ms ease-in-out;
+					}
+					&:last-child{
+						margin: 0;
+					}
+				}
+			}
+			h3 {
+				color: $white;
+				text-align: left;
+				font-size: .5rem;
+				text-transform: uppercase;
+				font-weight: 200;
+				margin: 0;
+				padding-top: 10px;
+			}
+			.grp1, .grp2 {
+				position: relative;
+				border-right: 1px solid $lit;
+				border-left: 1px solid $dim;
+				padding: 1px 2px;
+				@include flexdir(col);
+				&::before, &::after {
+					content: "";
+					position: absolute;
+					background-image: linear-gradient(to left, $lit, $dim 80%);
+					left: -1px;
+					right: -1px;
+					height: 1px;
+				}
+				&::before {top: -1px;}
+				&::after {bottom: -1px;}
+				div {
+					flex: 1 1 20px;
+					margin: 1px 0;
+
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 100%;
+					border-width: 1px;
+					border-style: solid;
+					border-color: $lit;
+					padding: 1% 2%;
+					span {
+						flex: 1 1 auto;
+						background-color: transparent;
+						background-image:url(data:image/png;base64,R0lGODlhFAAKAIABAP3hAP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMwMTQgNzkuMTU2Nzk3LCAyMDE0LzA4LzIwLTA5OjUzOjAyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyMDUyMDlFNUU4RjAxMUU0OUYxQkM4MTc4QzdGM0EwMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyMDUyMDlFNkU4RjAxMUU0OUYxQkM4MTc4QzdGM0EwMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjIwNTIwOUUzRThGMDExRTQ5RjFCQzgxNzhDN0YzQTAwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjIwNTIwOUU0RThGMDExRTQ5RjFCQzgxNzhDN0YzQTAwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAABQACgAAAheEjxm76cjaezFMGq+rWuV+cKAhjiVYFQA7);
+						background-repeat: repeat;
+						border-width: 0 10px;
+						border-style: solid;
+						border-color: transparent;
+					}
+				}
+			}
+		}
+	}
+
+	.ctrl {
+		flex: 5;
+		display: flex;
+		> div {
+			flex: 1;
+			@include flexdir(col);
+			h2 {flex: none;}
+			> div {
+				flex: 1;
+				@include flexdir(col);
+				justify-content: space-around;
+			}
+			span {
+				display: block;
+				background-color: $dim;
+				height: 10px;
+				border-radius: 5px;
+				transition: background-color 50ms ease-in-out;
+				position: relative;
+				margin: 0 10px;
+				i {
+					color: $lit;
+					position: absolute;
+					font-style: normal;
+					font-size: .6rem;
+					left: 105%;
+					top: 100%;
+					visibility: hidden;
+				}
+				&:hover, &:focus {
+					background-color: $lit;
+					i {visibility: visible;}
+				}
+				&:hover::before {
+					position: absolute;
+					left: 105%;
+					top: 0;
+					content: "";
+					display: block;
+					border-width: 5px 10px 5px 0;
+					border-style: solid;
+					border-color: transparent $green transparent transparent;
+				}
+
+			}
+		}
+	}
+	.micr {
+		flex: 2;
+	}
+}

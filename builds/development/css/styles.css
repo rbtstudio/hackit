@@ -1,0 +1,370 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 2rem;
+  color: red;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: #ebebeb;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  background-image: linear-gradient(#032e63, #010005);
+  font-family: "Neue Haas Unica Pro";
+  font-size: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #059bff;
+  font-size: .5rem;
+}
+
+section {
+  flex: 1;
+  height: 100%;
+  padding: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0499FF;
+}
+section h1 {
+  text-align: center;
+}
+section h2 {
+  text-align: center;
+}
+
+section#status-control-pane {
+  display: flex;
+  flex-direction: column;
+}
+section#status-control-pane > h1 {
+  flex: none;
+}
+section#status-control-pane > div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+section#status-control-pane .rule {
+  flex: 1;
+}
+section#status-control-pane .display {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+}
+section#status-control-pane .display .grp {
+  margin-bottom: 5px;
+}
+section#status-control-pane .display .energyrate {
+  display: flex;
+  flex-direction: row;
+}
+section#status-control-pane .display .energyrate .frame {
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #059bff;
+  background-image: linear-gradient(#032e63, #010005);
+}
+section#status-control-pane .display .energyrate .frame span {
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+section#status-control-pane .display .energyrate .frame span h3 {
+  font-size: .6rem;
+  color: #059bff;
+  font-weight: 200;
+  margin: 1vh 0;
+}
+section#status-control-pane .display .energyrate .frame div {
+  flex: 1;
+  margin: 0 10px;
+  border-width: 0 5px 2px;
+  border-color: #059bff;
+  border-style: solid;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVQIW2OMq7zlw4ADMIIkF7WrbcEmP+gkAarWGgXyq5CNAAAAAElFTkSuQmCC);
+}
+section#status-control-pane .display .energyrate .frame div::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: #FBFE5D;
+  background: #C61033;
+  background: linear-gradient(to right, #fbfe5d 0%, #c61034 100%);
+}
+section#status-control-pane .display .energyrate .frame > h2 {
+  flex: none;
+  line-height: 2;
+}
+section#status-control-pane .display .energyrate .side-btns {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+section#status-control-pane .display .energyrate .side-btns span {
+  flex: 1 1 5vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: .6rem;
+  margin: 1px;
+  color: #ebebeb;
+}
+section#status-control-pane .display .energyrate .side-btns span:nth-child(1) {
+  background-color: #059bff;
+  margin-top: 0;
+}
+section#status-control-pane .display .energyrate .side-btns span:nth-child(1):hover {
+  background-color: #ff6905;
+}
+section#status-control-pane .display .energyrate .side-btns span:nth-child(2) {
+  background-color: #006eb8;
+}
+section#status-control-pane .display .energyrate .side-btns span:nth-child(2):hover {
+  background-color: #b84900;
+}
+section#status-control-pane .display .energyrate .side-btns span:nth-child(3) {
+  background-color: #00406b;
+  margin-bottom: 0;
+}
+section#status-control-pane .display .energyrate .side-btns span:nth-child(3):hover {
+  background-color: #6b2b00;
+}
+section#status-control-pane .display .fluctuation {
+  display: flex;
+  flex-direction: column;
+  background-color: #01274E;
+}
+section#status-control-pane .display .fluctuation .tab {
+  flex: none;
+  display: flex;
+  flex-direction: row;
+}
+section#status-control-pane .display .fluctuation .tab div {
+  flex: none;
+  width: 50%;
+  background-color: #014681;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+}
+section#status-control-pane .display .fluctuation .tab div h2 {
+  color: #03ECFD;
+  padding: 1vh 0;
+  letter-spacing: .1em;
+}
+section#status-control-pane .display .fluctuation .graph {
+  border: 1px solid #059bff;
+  flex: 1 1 10vh;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVQIW2OMq7zlw4ADMIIkF7WrbcEmP+gkAarWGgXyq5CNAAAAAElFTkSuQmCC);
+}
+section#status-control-pane .display .fluctuation > h2 {
+  flex: none;
+}
+section#status-control-pane .display .fluctuation button.close {
+  flex: none;
+  margin-left: auto;
+  color: yellow;
+}
+section#status-control-pane .display .fluctuation button.close i {
+  border: 3px solid #027189;
+  padding: 1px;
+}
+section#status-control-pane .display .fluctuation .btn-group {
+  display: flex;
+  flex-direction: row;
+}
+section#status-control-pane .display .fluctuation .btn-group a {
+  flex: 1;
+  text-decoration: none;
+  border: 1px solid #059bff;
+  margin-right: 5px;
+  color: #ebebeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 2vw;
+  font-size: .6rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  transition: background-color 50ms ease-in-out;
+}
+section#status-control-pane .display .fluctuation .btn-group a:hover {
+  background-color: #540C00;
+}
+section#status-control-pane .display .fluctuation .btn-group a:hover i {
+  color: yellow;
+}
+section#status-control-pane .display .fluctuation .btn-group a i {
+  color: #00406b;
+  transform: background-color 50ms ease-in-out;
+}
+section#status-control-pane .display .fluctuation .btn-group a:last-child {
+  margin: 0;
+}
+section#status-control-pane .display .linear .btn-group {
+  display: flex;
+  flex-direction: row;
+}
+section#status-control-pane .display .linear .btn-group a {
+  flex: 1;
+  text-decoration: none;
+  border: 1px solid #059bff;
+  margin-right: 5px;
+  color: #ebebeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: .6rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  transform: background-color 50ms ease-in-out;
+}
+section#status-control-pane .display .linear .btn-group a:hover {
+  background-color: #540C00;
+}
+section#status-control-pane .display .linear .btn-group a:hover i {
+  color: yellow;
+}
+section#status-control-pane .display .linear .btn-group a i {
+  color: #00406b;
+  transform: background-color 50ms ease-in-out;
+}
+section#status-control-pane .display .linear .btn-group a:last-child {
+  margin: 0;
+}
+section#status-control-pane .display .linear h3 {
+  color: #ebebeb;
+  text-align: left;
+  font-size: .5rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  margin: 0;
+  padding-top: 10px;
+}
+section#status-control-pane .display .linear .grp1, section#status-control-pane .display .linear .grp2 {
+  position: relative;
+  border-right: 1px solid #059bff;
+  border-left: 1px solid #00406b;
+  padding: 1px 2px;
+  display: flex;
+  flex-direction: column;
+}
+section#status-control-pane .display .linear .grp1::before, section#status-control-pane .display .linear .grp1::after, section#status-control-pane .display .linear .grp2::before, section#status-control-pane .display .linear .grp2::after {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(to left, #059bff, #00406b 80%);
+  left: -1px;
+  right: -1px;
+  height: 1px;
+}
+section#status-control-pane .display .linear .grp1::before, section#status-control-pane .display .linear .grp2::before {
+  top: -1px;
+}
+section#status-control-pane .display .linear .grp1::after, section#status-control-pane .display .linear .grp2::after {
+  bottom: -1px;
+}
+section#status-control-pane .display .linear .grp1 div, section#status-control-pane .display .linear .grp2 div {
+  flex: 1 1 20px;
+  margin: 1px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #059bff;
+  padding: 1% 2%;
+}
+section#status-control-pane .display .linear .grp1 div span, section#status-control-pane .display .linear .grp2 div span {
+  flex: 1 1 auto;
+  background-color: transparent;
+  background-image: url(data:image/png;base64,R0lGODlhFAAKAIABAP3hAP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMwMTQgNzkuMTU2Nzk3LCAyMDE0LzA4LzIwLTA5OjUzOjAyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyMDUyMDlFNUU4RjAxMUU0OUYxQkM4MTc4QzdGM0EwMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyMDUyMDlFNkU4RjAxMUU0OUYxQkM4MTc4QzdGM0EwMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjIwNTIwOUUzRThGMDExRTQ5RjFCQzgxNzhDN0YzQTAwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjIwNTIwOUU0RThGMDExRTQ5RjFCQzgxNzhDN0YzQTAwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAABQACgAAAheEjxm76cjaezFMGq+rWuV+cKAhjiVYFQA7);
+  background-repeat: repeat;
+  border-width: 0 10px;
+  border-style: solid;
+  border-color: transparent;
+}
+section#status-control-pane .ctrl {
+  flex: 5;
+  display: flex;
+}
+section#status-control-pane .ctrl > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+section#status-control-pane .ctrl > div h2 {
+  flex: none;
+}
+section#status-control-pane .ctrl > div > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+section#status-control-pane .ctrl > div span {
+  display: block;
+  background-color: #00406b;
+  height: 10px;
+  border-radius: 5px;
+  transition: background-color 50ms ease-in-out;
+  position: relative;
+  margin: 0 10px;
+}
+section#status-control-pane .ctrl > div span i {
+  color: #059bff;
+  position: absolute;
+  font-style: normal;
+  font-size: .6rem;
+  left: 105%;
+  top: 100%;
+  visibility: hidden;
+}
+section#status-control-pane .ctrl > div span:hover, section#status-control-pane .ctrl > div span:focus {
+  background-color: #059bff;
+}
+section#status-control-pane .ctrl > div span:hover i, section#status-control-pane .ctrl > div span:focus i {
+  visibility: visible;
+}
+section#status-control-pane .ctrl > div span:hover::before {
+  position: absolute;
+  left: 105%;
+  top: 0;
+  content: "";
+  display: block;
+  border-width: 5px 10px 5px 0;
+  border-style: solid;
+  border-color: transparent #2cff14 transparent transparent;
+}
+section#status-control-pane .micr {
+  flex: 2;
+}
