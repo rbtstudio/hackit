@@ -1,4 +1,4 @@
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
 @mixin flexdir($dir){
 	display: flex;
@@ -41,6 +41,10 @@ body {
 	background-image: linear-gradient(hsl(213, 94%, 20%), hsl(252, 100%, 1%));
 	font-family: "Neue Haas Unica Pro";
 	font-size: 100%;
+	
+}
+main {
+	height: 100%;
 	@include flexdir(row);
 }
 
@@ -507,10 +511,12 @@ section#status-control-pane {
 
 /* ---------------new css------------------*/
 
+$modalbtn: hsl(222, 100%, 25%);
+$modallite: lighten($modalbtn, 10);
+
 section#status-control-pane {
 	.modal {
-		$modalbtn: hsl(222, 100%, 25%);
-		$modallite: lighten($modalbtn, 10);
+		
 		@mixin buttonshade($nth){
 			background-image: linear-gradient(to bottom, darken($modallite, $nth*2) 0%, darken($modalbtn, $nth*2) 100%);
 		}
@@ -581,6 +587,64 @@ section#status-control-pane {
 				}
 			}
 		}
+	}
+}
+.modalEle {
+	display: none;
+}
+.modalEle.open {
+	background-color: hsla(0, 0%, 3%, .9);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.modalCanvas {
+		@include flexdir(col);
+		flex: none;
+		width: 50vw;
+		height: 50vh;
+		background-image: linear-gradient($modalbtn, darken(hsl(213, 94%, 20%), 10));
+		border-bottom: 1px solid $dim;
+		position: relative;
+		&::before, &::after {
+			content: "";
+			display: block;
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			background-image: linear-gradient(to top, $dim 100%, transparent 0%);
+		}
+		&::before {left: 0;}
+		&::after {right: 0;}
+		h1 {
+			display: flex;
+			padding: 1vh;
+			i {
+				color: $dim;
+				margin-left: auto;
+				font-size: 1rem;
+				@include flexdir(col);
+				justify-content: center;
+				align-items: center;
+				transition: color 100ms ease-in-out;
+				&:hover {
+					color: $white;
+					cursor: pointer;
+				}
+				span {
+					color: $red;
+					font-size: .5em;
+				}
+			}
+		}
+		.modalContent {
+			flex: 1;
+		}	
 	}
 }
 

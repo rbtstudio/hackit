@@ -1,4 +1,4 @@
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -26,6 +26,10 @@ body {
   background-image: linear-gradient(#032e63, #010005);
   font-family: "Neue Haas Unica Pro";
   font-size: 100%;
+}
+
+main {
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -610,4 +614,70 @@ section#status-control-pane .modal ul li a {
   text-transform: uppercase;
   text-decoration: none;
   display: flex;
+}
+
+.modalEle {
+  display: none;
+}
+
+.modalEle.open {
+  background-color: rgba(8, 8, 8, 0.9);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalEle.open .modalCanvas {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: 50vw;
+  height: 50vh;
+  background-image: linear-gradient(#002680, #021731);
+  border-bottom: 1px solid #00406b;
+  position: relative;
+}
+.modalEle.open .modalCanvas::before, .modalEle.open .modalCanvas::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(to top, #00406b 100%, transparent 0%);
+}
+.modalEle.open .modalCanvas::before {
+  left: 0;
+}
+.modalEle.open .modalCanvas::after {
+  right: 0;
+}
+.modalEle.open .modalCanvas h1 {
+  display: flex;
+  padding: 1vh;
+}
+.modalEle.open .modalCanvas h1 i {
+  color: #00406b;
+  margin-left: auto;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: color 100ms ease-in-out;
+}
+.modalEle.open .modalCanvas h1 i:hover {
+  color: #ebebeb;
+  cursor: pointer;
+}
+.modalEle.open .modalCanvas h1 i span {
+  color: #FD3600;
+  font-size: .5em;
+}
+.modalEle.open .modalCanvas .modalContent {
+  flex: 1;
 }
