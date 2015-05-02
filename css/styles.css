@@ -3,9 +3,10 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 2rem;
-  color: red;
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 button {
@@ -50,6 +51,80 @@ section h1 {
 }
 section h2 {
   text-align: center;
+}
+
+section#status {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to top, #00264B, #02559A);
+  padding: 0;
+}
+section#status > h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: none;
+  align-self: center;
+  border-width: 4vh 2.5vw 0;
+  border-style: solid;
+  border-color: #049CFF transparent transparent transparent;
+  height: 0;
+  width: 15vw;
+  position: relative;
+  position: flex;
+}
+section#status > h1 span {
+  color: #ebebeb;
+  position: absolute;
+  top: -3vh;
+  left: 0;
+  width: 100%;
+}
+section#status > div {
+  flex: 1;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVQIW2OMq7zlw4ADMIIkF7WrbcEmP+gkAarWGgXyq5CNAAAAAElFTkSuQmCC);
+  display: flex;
+}
+section#status .btn-bars {
+  flex: 1;
+  padding: 0 4vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+section#status .btn-bars li {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 50%;
+  background-color: rgba(0, 18, 41, 0.5);
+}
+section#status .btn-bars li > span {
+  display: block;
+  width: 100%;
+  height: 4vh;
+  flex: none;
+  background-color: #FFFF01;
+}
+section#status .btn-bars li:hover {
+  background-color: #001229;
+  transition: background-color 100ms ease-in-out;
+}
+section#status .btn-bars li:hover > span {
+  background-color: #FD3600;
+  transition: background-color 100ms ease-in-out;
+}
+section#status .btn-bars li div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section#status .btn-bars li div span {
+  line-height: 1;
+  color: #ebebeb;
+  font-weight: 200;
+  font-size: .8rem;
+  text-transform: uppercase;
 }
 
 section#status-control-pane {
@@ -99,7 +174,7 @@ section#status-control-pane .display .energyrate .frame span h3 {
   margin: 1vh 0;
 }
 section#status-control-pane .display .energyrate .frame div {
-  flex: 1;
+  flex: 1 1 20vh;
   margin: 0 10px;
   border-width: 0 5px 2px;
   border-color: #059bff;
@@ -182,7 +257,7 @@ section#status-control-pane .display .fluctuation .tab div h2 {
 }
 section#status-control-pane .display .fluctuation .graph {
   border: 1px solid #059bff;
-  flex: 1 1 10vh;
+  flex: 1 1 20vh;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVQIW2OMq7zlw4ADMIIkF7WrbcEmP+gkAarWGgXyq5CNAAAAAElFTkSuQmCC);
 }
 section#status-control-pane .display .fluctuation > h2 {
@@ -197,38 +272,6 @@ section#status-control-pane .display .fluctuation button.close i {
   border: 3px solid #027189;
   padding: 1px;
 }
-section#status-control-pane .display .fluctuation .btn-group {
-  display: flex;
-  flex-direction: row;
-}
-section#status-control-pane .display .fluctuation .btn-group a {
-  flex: 1;
-  text-decoration: none;
-  border: 1px solid #059bff;
-  margin-right: 5px;
-  color: #ebebeb;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1vh 2vw;
-  font-size: .6rem;
-  text-transform: uppercase;
-  font-weight: 200;
-  transition: background-color 50ms ease-in-out;
-}
-section#status-control-pane .display .fluctuation .btn-group a:hover {
-  background-color: #540C00;
-}
-section#status-control-pane .display .fluctuation .btn-group a:hover i {
-  color: yellow;
-}
-section#status-control-pane .display .fluctuation .btn-group a i {
-  color: #00406b;
-  transform: background-color 50ms ease-in-out;
-}
-section#status-control-pane .display .fluctuation .btn-group a:last-child {
-  margin: 0;
-}
 section#status-control-pane .display .linear .btn-group {
   display: flex;
   flex-direction: row;
@@ -242,11 +285,11 @@ section#status-control-pane .display .linear .btn-group a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 1vh 1vw;
   font-size: .6rem;
   text-transform: uppercase;
   font-weight: 200;
-  transform: background-color 50ms ease-in-out;
+  transition: background-color 50ms ease-in-out;
 }
 section#status-control-pane .display .linear .btn-group a:hover {
   background-color: #540C00;
@@ -293,7 +336,7 @@ section#status-control-pane .display .linear .grp1::after, section#status-contro
   bottom: -1px;
 }
 section#status-control-pane .display .linear .grp1 div, section#status-control-pane .display .linear .grp2 div {
-  flex: 1 1 20px;
+  flex: 1 1 5vh;
   margin: 1px 0;
   display: flex;
   flex-direction: column;
@@ -306,6 +349,7 @@ section#status-control-pane .display .linear .grp1 div, section#status-control-p
 }
 section#status-control-pane .display .linear .grp1 div span, section#status-control-pane .display .linear .grp2 div span {
   flex: 1 1 auto;
+  width: 100%;
   background-color: transparent;
   background-image: url(data:image/png;base64,R0lGODlhFAAKAIABAP3hAP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMwMTQgNzkuMTU2Nzk3LCAyMDE0LzA4LzIwLTA5OjUzOjAyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyMDUyMDlFNUU4RjAxMUU0OUYxQkM4MTc4QzdGM0EwMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyMDUyMDlFNkU4RjAxMUU0OUYxQkM4MTc4QzdGM0EwMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjIwNTIwOUUzRThGMDExRTQ5RjFCQzgxNzhDN0YzQTAwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjIwNTIwOUU0RThGMDExRTQ5RjFCQzgxNzhDN0YzQTAwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAABQACgAAAheEjxm76cjaezFMGq+rWuV+cKAhjiVYFQA7);
   background-repeat: repeat;
