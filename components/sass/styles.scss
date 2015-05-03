@@ -648,6 +648,22 @@ section#status-control-pane {
 	}
 }
 
+#dialInner {
+	width: 10vw;
+	height: 10vw;
+	border-radius: 50%;
+	//background-color: $lit;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("/images/innerCircle.svg");
+	background-position: center;
+	background-size: cover;
+	h1 {
+		color: $white;
+	}
+}
+
 
 
 
